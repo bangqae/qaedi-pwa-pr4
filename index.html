@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Qaedi's CV</title>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Qaedi's CV"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+
+    <!-- Navigasi -->
+    <nav class="blue-grey lighten-1" role="navigation">
+      <div class="nav-wrapper container">
+        <a href="#" class="brand-logo" id="logo-container">Qaedi's CV</a>
+        <a href="#" class="sidenav-trigger" data-target="nav-mobile">☰</a>
+
+        <ul class="topnav right hide-on-med-and-down"></ul>
+        <ul class="sidenav" id="nav-mobile"></ul>
+      </div>
+    </nav>
+    <nav class="brand-logo topnav sidenav">
+
+    </nav>
+    <!-- Akhir Navigasi -->
+
+    <div class="container" id="body-content"></div>
+
+    <script src="assets/js/materialize.min.js"></script>
+    <script src="assets/js/nav.js"></script>
+    <script>
+      // Script to register the service worker goes here
+      if (!('serviceWorker' in navigator)) { //apabila tidak ada sw di navigator
+        console.log('Service worker not supported'); //pesan pada log konsol ini akan muncul
+        //return; //munculkan nilai balik pada log
+      }
+      navigator.serviceWorker.register('qaedi-sw.js')
+      .then(function() {
+        console.log('Registered'); //pesan yg akan muncul di log konsol, apabila berhasil di register
+      })
+      .catch(function(error) {
+        console.log('Registration failed:', error); //pesan yg akan keluar pada log konsol, apabila gagal
+      });
+    </script>
+  </body>
+</html>

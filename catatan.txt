@@ -1,0 +1,7 @@
+tugas service worker
+-buka kembali projek responsive img
+-implementasikan sw ke projek anda sebelumnya dgn nama: namadepan-sw.js
+-semua proses sw harus terpenuhi
+-berikan penjelasan pada kode program
+-push ke github
+-

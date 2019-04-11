@@ -1,0 +1,9 @@
+/*gambar akan diubah skalanya jika layar display kurang dari nilai resolusi lebar gambar*/
+img {
+  max-width: 100%;
+}
+
+.motto {
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
