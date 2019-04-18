@@ -30,18 +30,21 @@
     <script src="assets/js/materialize.min.js"></script>
     <script src="assets/js/nav.js"></script>
     <script>
-      // Script to register the service worker goes here
-      if (!('serviceWorker' in navigator)) { //apabila tidak ada sw di navigator
-        console.log('Service worker not supported'); //pesan pada log konsol ini akan muncul
-        //return; //munculkan nilai balik pada log
+      // // Script to register the service worker goes here
+      // if (!('serviceWorker' in navigator)) { //apabila tidak ada sw di navigator
+      //   console.log('Service worker not supported'); //pesan pada log konsol ini akan muncul
+      //   //return; //munculkan nilai balik pada log
+      // }
+      
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('qaedi-sw.js')//memasukkan file sw
+        .then(function(registration) { //perintah then mirip dengan perintah try
+          console.log('Registered:', registration);//notifikasi register berhasil di konsol browser
+        })
+        .catch(function(error) { //perintah catch, apabila responnya invalid
+          console.log('Registration failed: ', error);//notifikasi register gagal di konsol browser
+        });
       }
-      navigator.serviceWorker.register('qaedi-sw.js')
-      .then(function() {
-        console.log('Registered'); //pesan yg akan muncul di log konsol, apabila berhasil di register
-      })
-      .catch(function(error) {
-        console.log('Registration failed:', error); //pesan yg akan keluar pada log konsol, apabila gagal
-      });
     </script>
   </body>
 </html>
